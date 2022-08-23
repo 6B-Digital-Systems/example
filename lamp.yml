@@ -19,9 +19,12 @@
   
 - name: Create 1Password Secret
   hosts: all
+  environment:
+    OP_CONNECT_HOST: "{{ OP_CONNECT_HOST }}"
+    OP_CONNECT_TOKEN: "{{ OP_CONNECT_TOKEN }}"
+    OP_VAULT_ID: "{{ OP_VAULT_ID }}"
   tasks:
     - onepassword.connect.generic_item:
-
         vault_id: "DevOps"
         title: Test Item from Ansible
         state: present
