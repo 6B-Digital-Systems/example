@@ -1,25 +1,23 @@
 ---
-- name: Install Lamp Stack
-  hosts: all
-  become: yes
+  - name: Installing LAMP Packages
+    package:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - apache2
+      #- mysql-server
+      - mariadb-server
+      - mariadb-client
+      - php 
+      - libapache2-mod-php 
+      - php-mysql
 
-  roles:
-  - lamp
-
-
-
-  # handlers:
-  # - name: Reload Apache
-  #   service:
-  #     name: apache2
-  #     state: reloaded
-
-  # - name: Restart Apache
-  #   service:
-  #     name: apache2
-  #     state: restarted
+     # - python3-pymysql
   
   # - name: Create 1Password Secret
+  #   hosts: all
+  #   collections:
+  #   - onepassword.connect
   #   tasks:
   #     - onepassword.connect.generic_item:
   #         vault_id: "DevOps"
