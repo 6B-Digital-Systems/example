@@ -22,7 +22,7 @@
   environment:
     OP_CONNECT_HOST: "{{ OP_CONNECT_HOST }}"
     OP_CONNECT_TOKEN: "{{ OP_CONNECT_TOKEN }}"
-    OP_VAULT_ID: "{{ OP_VAULT_ID }}"
+    #OP_VAULT_ID: "{{ OP_VAULT_ID }}"
   tasks:
     - onepassword.connect.generic_item:
         vault_id: "{{ OP_VAULT_ID }}"
