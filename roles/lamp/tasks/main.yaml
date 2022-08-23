@@ -13,8 +13,9 @@
       - php-mysql
 
      # - python3-pymysql
-
+  
   - name: Create 1Password Secret
+    hosts: all
     collections:
     - onepassword.connect
     tasks:
