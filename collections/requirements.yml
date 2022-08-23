@@ -1,4 +1,13 @@
 ---
+# collections:
+#   - name: community.general  
+#   - name: onepassword.connect
+
 collections:
-  - name: community.general  
-  - name: onepassword.connect
+# With just the collection name
+- onepassword.connect
+
+# With the collection name, version, and source options
+- name: onepassword.connect
+  version: '*'
+  source: 'https://galaxy.ansible.com/onepassword/connect'
