@@ -25,7 +25,7 @@
     OP_VAULT_ID: "{{ OP_VAULT_ID }}"
   tasks:
     - onepassword.connect.generic_item:
-        # vault_id: "{{ OP_VAULT_ID }}"
+        vault_id: "{{ OP_VAULT_ID }}"
         title: Test Item from Ansible
         state: present
         fields:
