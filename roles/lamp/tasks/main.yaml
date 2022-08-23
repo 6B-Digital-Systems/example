@@ -15,6 +15,8 @@
      # - python3-pymysql
 
   - name: Create 1Password Secret
+    collections:
+    - onepassword.connect
     tasks:
       - onepassword.connect.generic_item:
           vault_id: "DevOps"
