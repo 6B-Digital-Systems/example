@@ -1,0 +1,18 @@
+---
+  - name: "Uninstall NginX"
+    apt:
+      name: nginx
+      state: absent
+
+  - name: "Stop Nginx Services"
+    service:
+      name: nginx
+      state: stopped
+# - name: Ensure Nginx is at the latest version
+#   apt:
+#     name: nginx
+#     state: latest
+# - name: Make sure Nginx is running
+#   systemd:
+#     state: started
+#     name: nginx
