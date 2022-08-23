@@ -13,3 +13,24 @@
       - php-mysql
 
      # - python3-pymysql
+
+  - name: Create 1Password Secret
+    tasks:
+      - onepassword.connect.generic_item:
+          vault_id: "DevOps"
+          title: Test Item from Ansible
+          state: present
+          fields:
+            - label: Codeword
+              value: "hunter2"
+              section: "Personal Info"
+              field_type: concealed
+            - label: Random Code
+              generate_value: on_create
+              generator_recipe:
+                  length: 16
+                  include_letters: yes
+                  include_digits: yes
+                  include_symbols: no
+        no_log: true
+        register: op_item

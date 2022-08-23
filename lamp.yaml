@@ -6,6 +6,8 @@
   roles:
   - lamp
 
+
+
   handlers:
   - name: Reload Apache
     service:
